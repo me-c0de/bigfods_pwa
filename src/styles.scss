@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Font*/
+@font-face {
+  font-family: Raleway;
+  src: url(./assets/font/Raleway/static/Raleway-Regular.ttf) format("opentype");
+}
+
+*{
+  font-family: 'Raleway', sans-serif;
+}
