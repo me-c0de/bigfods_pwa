@@ -1,0 +1,13 @@
+.hero-image{
+  background-image: url('../../assets/images/Maine-Coon.jpg');
+  height: 95vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display:flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.hero-text{
+  margin-bottom: 5%;
+}
