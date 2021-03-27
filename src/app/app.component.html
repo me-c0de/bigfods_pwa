@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
+  <div #start class="container-fluid">
     <span class="navbar-brand mb-0 mx-5 px-5 h1">BigFods</span>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -7,23 +7,84 @@
     <div class="collapse navbar-collapse mx-5 " id="navbarNav">
       <ul class="navbar-nav m-auto">
         <li class="nav-item  mx-5">
-          Katzen & Kitten
+          <a (click)="scroll(presentation)">Katzen & Kitten</a>
         </li>
         <li class="nav-item  mx-5">
-          Kater
+          <a (click)="scroll(presentation)">Kater</a>
         </li>
         <li class="nav-item mx-5">
-          Bleibe
+          <a (click)="scroll(residence)">Bleibe</a>
         </li>
         <li class="nav-item mx-5">
-          Wir
+          <a (click)="scroll(aboutUs)">Wir</a>
         </li>
         <li class="nav-item mx-5">
-          Kontakt
+          <a (click)="scroll(contact)">Kontakt</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<app-hero-image></app-hero-image>
+<div>
+  <app-hero-image></app-hero-image>
+</div>
+<div #presentation>
+  <app-presentation></app-presentation>
+</div>
+<div #residence>
+  <app-cat-residence-gallery  ></app-cat-residence-gallery>
+</div>
+<div #aboutUs >
+  <app-about-us></app-about-us>
+</div>
+<div #contact>
+  <app-contact></app-contact>
+</div>
+<footer class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2 pt-5  mx-5">
+        <h2>bigfods</h2>
+        <h3>Ribin Scharr</h3>
+        <p>Eingetragen Züchter</p>
+      </div>
+      <div class="col-md-2 mx-4">
+        <div class="p-3 pt-5">
+          <img class="imgsize" src="./assets/images/placeholder.png" alt="">
+        </div>
+        <div class="lines">
+          <p>
+            Gartenstraße 20
+          </p>
+          <p>
+            07551 Gera
+          </p>
+        </div>
+      </div>
+      <div class="col-md-2 mx-4">
+        <div class="p-3 pt-5">
+          <img class="imgsize" src="./assets/images/mail_1.png" alt="">
+        </div>
+        <div class="lines">
+          <p>
+            0173 7373614
+          </p>
+          <p>
+            robinscharr6@gmail.com
+          </p>
+        </div>
+      </div>
+      <div class="col-md-1 px-4 m-auto">
+        <div class="link">
+          <a href="">Impressum</a>
+        </div>
+        <div class="link">
+          <a href="">Datenschutz</a>
+        </div>
+      </div>
+      <div class="col-md-1 px-5 m-auto">
+        <img class="imgsize" (click)="scroll(start)" src="./assets/images/up-arrow.png" alt="">
+      </div>
+    </div>
+  </div>
+</footer>

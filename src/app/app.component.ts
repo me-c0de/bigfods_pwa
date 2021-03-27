@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'bigfods-pwa';
+
+  scroll(element: HTMLElement): void{
+    element.scrollIntoView();
+  }
 }

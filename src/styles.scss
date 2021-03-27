@@ -9,3 +9,45 @@
 *{
   font-family: 'Raleway', sans-serif;
 }
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+.background{
+  background-color: #4f4d4e;
+  color: aliceblue;
+}
+
+.imgsize{
+  width: 40px;
+  height: 40px
+}
+
+.lines{
+  line-height: 0.5;
+}
+
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  font-weight: bold;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}

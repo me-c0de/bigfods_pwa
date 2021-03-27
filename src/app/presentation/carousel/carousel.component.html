@@ -1,0 +1,11 @@
+<div class='container-fluid hight'>
+  <div class='col-9 m-auto mt-5 pt-5'>
+    <ngb-carousel class="carousel m-auto">
+      <ng-template *ngFor="let image of catImage" ngbSlide>
+        <div>
+          <img [src]=image class="img">
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
