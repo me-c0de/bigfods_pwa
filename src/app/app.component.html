@@ -1,43 +1,46 @@
-<nav class="navbar navbar-expand-lg">
-  <div #start class="container-fluid">
-    <span class="navbar-brand mb-0 mx-5 px-5 h1">BigFods</span>
+<nav class="navbar navbar-expand-lg fixed-top sticky-top">
+  <div class="container-fluid">
+    <a pageScroll pageScrollOffset="100" href="#start" class="navbar-brand mb-0 mx-5 px-5 h1">BigFods</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse mx-5 " id="navbarNav">
       <ul class="navbar-nav m-auto">
         <li class="nav-item  mx-5">
-          <a (click)="scroll(presentation)">Katzen & Kitten</a>
+          <a pageScroll pageScrollOffset="90" href="#presentation">Katzen & Kitten</a>
         </li>
         <li class="nav-item  mx-5">
-          <a (click)="scroll(presentation)">Kater</a>
+          <a pageScroll pageScrollOffset="90" href="#presentation" >Kater</a>
         </li>
         <li class="nav-item mx-5">
-          <a (click)="scroll(residence)">Bleibe</a>
+          <a pageScroll pageScrollOffset="70" href="#residence">Bleibe</a>
         </li>
         <li class="nav-item mx-5">
-          <a (click)="scroll(aboutUs)">Wir</a>
+          <a pageScroll pageScrollOffset="50" href="#aboutUs">Wir</a>
         </li>
         <li class="nav-item mx-5">
-          <a (click)="scroll(contact)">Kontakt</a>
+          <a pageScroll href="#contact">Kontakt</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<div>
+<div id="start">
   <app-hero-image></app-hero-image>
 </div>
-<div #presentation>
+<div>
+  <app-image-upload></app-image-upload>
+</div>
+<div id="presentation">
   <app-presentation></app-presentation>
 </div>
-<div #residence>
-  <app-cat-residence-gallery  ></app-cat-residence-gallery>
+<div id="residence">
+  <app-cat-residence-gallery></app-cat-residence-gallery>
 </div>
-<div #aboutUs >
+<div id="aboutUs" >
   <app-about-us></app-about-us>
 </div>
-<div #contact>
+<div id="contact">
   <app-contact></app-contact>
 </div>
 <footer class="background">
@@ -83,7 +86,7 @@
         </div>
       </div>
       <div class="col-md-1 px-5 m-auto">
-        <img class="imgsize" (click)="scroll(start)" src="./assets/images/up-arrow.png" alt="">
+        <img class="imgsize" pageScroll pageScrollOffset="100"  href="#start" src="./assets/images/up-arrow.png" alt="">
       </div>
     </div>
   </div>

@@ -24,6 +24,8 @@
     "@ng-bootstrap/ng-bootstrap": "^8.0.4",
     "angular-in-memory-web-api": "^0.11.0",
     "bootstrap": "^5.0.0-beta2",
+    "ngx-page-scroll": "^7.0.4",
+    "ngx-page-scroll-core": "^7.0.4",
     "rxjs": "~6.6.0",
     "save-dev": "0.0.1-security",
     "tslib": "^2.0.0",

@@ -6,14 +6,13 @@ import { AppComponent } from './app.component';
 import { HeroImageComponent } from './hero-image/hero-image.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { CarouselComponent } from './presentation/carousel/carousel.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import {InMemoryDataService} from './in-memory-data.service';
 import { HttpClientModule} from '@angular/common/http';
 import { CatResidenceGalleryComponent } from './cat-residence-gallery/cat-residence-gallery.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
-
-
+import {NgxPageScrollModule} from "ngx-page-scroll";
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -24,17 +23,15 @@ import { ContactComponent } from './contact/contact.component';
     CarouselComponent,
     CatResidenceGalleryComponent,
     AboutUsComponent,
-    ContactComponent
+    ContactComponent,
+    ImageUploadComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
+    NgxPageScrollModule,
     HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false })
+    FormsModule
   ],
   bootstrap: [AppComponent]
 })

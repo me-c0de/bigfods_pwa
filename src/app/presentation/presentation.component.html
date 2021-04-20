@@ -1,8 +1,9 @@
+
 <div class="container ">
   <div *ngFor="let cat of cats" class="row py-5 my-5">
     <div class="col-lg-3">
       <div class="profile-position">
-        <img [src]=cat.img class="img-fluid profile" alt="">
+        <!--<img [src]=cat.picture class="img-fluid profile" alt="">-->
       </div>
     </div>
     <div class="col-lg-9">
@@ -10,12 +11,16 @@
         <h3>{{ cat.name }}</h3>
         <p>{{ cat.description }}</p>
       </div>
-      <app-carousel [catImage]=cat.kittenImages></app-carousel>
+     <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
     </div>
   </div>
+  <div>
+    <input  #catName/>
+    <input  #catDescription/>
+    <input  #imageInput
+            type="file"
+            accept="image/*"
+    />
+    <button class="btn-primary" (click)="add(catName.value, catDescription.value, imageInput)"></button>
+  </div>
 </div>
-
-
-
-
-
