@@ -22,16 +22,13 @@ export class PresentationComponent{
     console.log(this.cats)
   }
 
-  add(name: string, description: string, imageInput: any){
-
-    const file : File = imageInput.files[0];
-
+  add(name: string, description: string){
 
     name = name.trim();
     if(!name){
       return;
     }
-    this.catService.addCat({ name, description, file } as Cat)
+    this.catService.addCat({ name, description} as Cat)
       .subscribe(cat => {this.cats.push(cat)})
   }
 }

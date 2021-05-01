@@ -17,10 +17,6 @@
   <div>
     <input  #catName/>
     <input  #catDescription/>
-    <input  #imageInput
-            type="file"
-            accept="image/*"
-    />
-    <button class="btn-primary" (click)="add(catName.value, catDescription.value, imageInput)"></button>
+    <button class="btn-primary" (click)="add(catName.value, catDescription.value)"></button>
   </div>
 </div>

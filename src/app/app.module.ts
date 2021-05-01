@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import {NgxPageScrollModule} from "ngx-page-scroll";
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {FormsModule} from "@angular/forms";
+import {SafeHtmlPipe} from "./image-upload/safeHtmlPipe";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {FormsModule} from "@angular/forms";
     CatResidenceGalleryComponent,
     AboutUsComponent,
     ContactComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

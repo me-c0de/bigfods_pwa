@@ -14,38 +14,14 @@ export class CatService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor(private http: HttpClient) { }
 
   getCats(): Observable<Cat[]>{
-    return this.http.get<Cat[]>(this.catsUrl + "/cats")
-      .pipe(
-      catchError(this.handleError<Cat[]>('getCats', []))
-    );
+    return this.http.get<Cat[]>(this.catsUrl + "/cats");
   }
 
   addCat(cat: Cat): Observable<Cat>{
     return this.http.post<Cat>(this.catsUrl + "/cat", cat, this.httpOptions)
-  }
-
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
-
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
   }
 }
 
