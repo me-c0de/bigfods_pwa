@@ -14,6 +14,7 @@ import {NgxPageScrollModule} from "ngx-page-scroll";
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {FormsModule} from "@angular/forms";
 import {SafeHtmlPipe} from "./image-upload/safeHtmlPipe";
+import { CatProfilePictureComponent } from './cat-profile-picture/cat-profile-picture.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {SafeHtmlPipe} from "./image-upload/safeHtmlPipe";
     AboutUsComponent,
     ContactComponent,
     ImageUploadComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    CatProfilePictureComponent
   ],
   imports: [
     BrowserModule,

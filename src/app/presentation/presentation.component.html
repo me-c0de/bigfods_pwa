@@ -2,9 +2,7 @@
 <div class="container ">
   <div *ngFor="let cat of cats" class="row py-5 my-5">
     <div class="col-lg-3">
-      <div class="profile-position">
-        <!--<img [src]=cat.picture class="img-fluid profile" alt="">-->
-      </div>
+      <app-cat-profile-picture [cat]=cat></app-cat-profile-picture>
     </div>
     <div class="col-lg-9">
       <div class="mx-5 px-5">
@@ -13,10 +11,10 @@
       </div>
      <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
     </div>
+    <button>Delete</button>
+    <button>Edit</button>
   </div>
   <div>
-    <input  #catName/>
-    <input  #catDescription/>
-    <button class="btn-primary" (click)="add(catName.value, catDescription.value)"></button>
+    <app-image-upload></app-image-upload>
   </div>
 </div>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, of} from 'rxjs';
 import {Cat} from './cat';
-import {catchError, tap} from "rxjs/operators";
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,11 +17,11 @@ export class CatService {
   constructor(private http: HttpClient) { }
 
   getCats(): Observable<Cat[]>{
-    return this.http.get<Cat[]>(this.catsUrl + "/cats");
+    return this.http.get<Cat[]>(this.catsUrl + '/cats');
   }
 
   addCat(cat: Cat): Observable<Cat>{
-    return this.http.post<Cat>(this.catsUrl + "/cat", cat, this.httpOptions)
+    return this.http.post<Cat>(this.catsUrl + '/cat', cat, this.httpOptions);
   }
 }
 

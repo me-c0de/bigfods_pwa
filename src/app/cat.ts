@@ -1,5 +1,8 @@
+import {Image} from './image';
+
 export interface Cat{
+  id: number;
   name: string;
   description: string;
-  file: File;
+  image: Image;
 }

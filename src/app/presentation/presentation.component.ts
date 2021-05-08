@@ -1,34 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import {Cat} from '../cat';
-import {CatService} from "../cat.service";
+import {CatService} from '../cat.service';
+import {Observable} from 'rxjs';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-presentation',
   templateUrl: './presentation.component.html',
   styleUrls: ['./presentation.component.scss'],
 })
-export class PresentationComponent{
+export class PresentationComponent implements OnInit{
 
 
   cats: Cat[] = [];
-  catsUrl = 'http://localhost:8080/api/cats';
+  imageToShow: any;
 
-  constructor(private catService: CatService) {
-    this.getCats()
+  constructor(private http: HttpClient, private catService: CatService) {
+  }
+
+  ngOnInit(): void {
+    this.getCats();
   }
 
   getCats(): void {
-    this.catService.getCats().subscribe(cats => this.cats = cats)
-    console.log(this.cats)
-  }
-
-  add(name: string, description: string){
-
-    name = name.trim();
-    if(!name){
-      return;
-    }
-    this.catService.addCat({ name, description} as Cat)
-      .subscribe(cat => {this.cats.push(cat)})
+    this.catService.getCats().subscribe(cats => this.cats = cats);
+    console.log(this.cats);
   }
 }

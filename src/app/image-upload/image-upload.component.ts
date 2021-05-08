@@ -1,6 +1,8 @@
 import {HttpClient, HttpEventType, HttpHeaders} from '@angular/common/http';
 import { Component } from '@angular/core';
-import {Observable} from "rxjs";
+import {Observable} from 'rxjs';
+import {Cat} from '../cat';
+import {CatService} from '../cat.service';
 
 @Component({
   selector: 'app-image-upload',
@@ -9,54 +11,37 @@ import {Observable} from "rxjs";
 })
 export class ImageUploadComponent{
 
-  imageToShow: any;
+  cats: Cat[] = [];
+  selectedFile: File;
+
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data; boundary=something' })
   };
 
-  selectedFile: File;
-  isImageLoading: boolean;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private catService: CatService) {
   }
 
-  public onFileChanged(event) {
+  public onFileChanged(event): void {
    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile)
+   console.log(this.selectedFile);
   }
 
-  public onUpload(){
+  public onUpload(name: string, description: string): void {
     const formdata = new FormData();
-    formdata.append("image", this.selectedFile, this.selectedFile.name);
-    formdata.append("filename", this.selectedFile.name);
-    this.http.post('http://localhost:8080/api/image', formdata)
-      .subscribe(res => console.log(res));
-  }
+    formdata.append('image', this.selectedFile, this.selectedFile.name);
+    formdata.append('filename', this.selectedFile.name);
 
-  getImage(imageUrl: string): Observable<Blob> {
-    return this.http.get(imageUrl, { responseType: 'blob' });
-  }
-
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener("load", () => {
-      this.imageToShow = reader.result;
-    }, false);
-
-    if (image) {
-      reader.readAsDataURL(image);
+    name = name.trim();
+    if (!name){
+      return;
     }
+
+    this.catService.addCat({ name, description} as Cat)
+      .subscribe( cat => this.http.post('http://localhost:8080/api/cat/' + cat.id + '/image', formdata)
+        .subscribe(res => console.log(res)));
   }
 
-  getImageFromService() {
-    this.isImageLoading = true;
-    this.getImage("http://localhost:8080/api/image/1").subscribe(data => {
-      this.createImageFromBlob(data);
-      this.isImageLoading = false;
-    }, error => {
-      this.isImageLoading = false;
-      console.log(error);
-    });
-  }
+
 }
