@@ -10,10 +10,10 @@ import { HttpClientModule} from '@angular/common/http';
 import { CatResidenceGalleryComponent } from './cat-residence-gallery/cat-residence-gallery.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
-import {NgxPageScrollModule} from "ngx-page-scroll";
+import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-import {FormsModule} from "@angular/forms";
-import {SafeHtmlPipe} from "./image-upload/safeHtmlPipe";
+import {FormsModule} from '@angular/forms';
+import {SafeHtmlPipe} from './image-upload/safeHtmlPipe';
 import { CatProfilePictureComponent } from './cat-profile-picture/cat-profile-picture.component';
 
 

@@ -26,4 +26,9 @@ export class PresentationComponent implements OnInit{
     this.catService.getCats().subscribe(cats => this.cats = cats);
     console.log(this.cats);
   }
+
+  public onDelete(id): void {
+    console.log('onDelete: executed');
+    this.catService.deleteCat(id).subscribe(res => console.log(res));
+  }
 }

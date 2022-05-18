@@ -16,11 +16,11 @@ export class CatProfilePictureComponent implements OnInit {
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.getImage(this.cat.id);
+     this.getImage(this.cat.id);
   }
 
   getImage(id): void {
-    this.http.get('http://localhost:8080/api/cat/' + id + '/image', { responseType: 'blob' })
+    this.http.get('http://127.0.0.1:8080/api/cats/' + id + '/images', { responseType: 'blob' })
       .subscribe(data => { this.createImageFromBlob(data); });
   }
 
