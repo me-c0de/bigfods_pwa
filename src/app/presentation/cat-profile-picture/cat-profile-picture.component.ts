@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cat} from '../cat';
+import {Cat} from '../../cat';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 

@@ -14,7 +14,8 @@ import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import {FormsModule} from '@angular/forms';
 import {SafeHtmlPipe} from './image-upload/safeHtmlPipe';
-import { CatProfilePictureComponent } from './cat-profile-picture/cat-profile-picture.component';
+import { CatProfilePictureComponent } from './presentation/cat-profile-picture/cat-profile-picture.component';
+import { EditComponent } from './presentation/edit/edit.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CatProfilePictureComponent } from './cat-profile-picture/cat-profile-pi
     ContactComponent,
     ImageUploadComponent,
     SafeHtmlPipe,
-    CatProfilePictureComponent
+    CatProfilePictureComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

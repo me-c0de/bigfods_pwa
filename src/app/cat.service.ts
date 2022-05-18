@@ -26,5 +26,9 @@ export class CatService {
   addCat(cat: Cat): Observable<Cat>{
     return this.http.post<Cat>(this.catsUrl + '/cats', cat, this.httpOptions);
   }
+
+  updateCat(cat: Cat): Observable<Cat>{
+    return this.http.put<Cat>(this.catsUrl + '/cats/' + cat.id, cat, this.httpOptions);
+  }
 }
 

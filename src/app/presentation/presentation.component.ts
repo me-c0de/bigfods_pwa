@@ -13,6 +13,7 @@ export class PresentationComponent implements OnInit{
 
 
   cats: Cat[] = [];
+  showEdit = false;
   imageToShow: any;
 
   constructor(private http: HttpClient, private catService: CatService) {
@@ -30,5 +31,9 @@ export class PresentationComponent implements OnInit{
   public onDelete(id): void {
     console.log('onDelete: executed');
     this.catService.deleteCat(id).subscribe(res => console.log(res));
+  }
+
+  public onEdit(cat: Cat): void{
+    this.showEdit = true;
   }
 }

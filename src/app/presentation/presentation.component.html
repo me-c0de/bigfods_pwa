@@ -11,8 +11,9 @@
       </div>
      <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
     </div>
-    <button>Delete</button>
-    <button (click)="onDelete(cat.id)">Edit</button>
+    <button (click)="onDelete(cat.id)" >Delete</button>
+    <button (click)="onEdit(cat)">Edit</button>
+    <app-edit *ngIf="showEdit" [cat]=cat ></app-edit>
   </div>
   <div>
     <app-image-upload></app-image-upload>
