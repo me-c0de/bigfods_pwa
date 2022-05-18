@@ -27,8 +27,11 @@ export class EditComponent implements OnInit {
   public onUpdate(name: string, description: string): void {
 
     const formdata = new FormData();
-    formdata.append('image', this.selectedFile, this.selectedFile.name);
-    formdata.append('filename', this.selectedFile.name);
+
+    if (this.selectedFile){
+      formdata.append('image', this.selectedFile, this.selectedFile.name);
+      formdata.append('filename', this.selectedFile.name);
+    }
 
     name = name.trim();
     if (!name){
@@ -39,7 +42,9 @@ export class EditComponent implements OnInit {
 
     this.catService.updateCat({ id, name, description} as Cat)
       .subscribe( cat => {
-        this.http.put('http://127.0.0.1:8080/api/images/' + cat.image.id, formdata).subscribe(res => console.log(res));
+        if (this.selectedFile){
+          this.http.put('http://127.0.0.1:8080/api/images/' + cat.image.id, formdata).subscribe(res => console.log(res));
+        }
       });
   }
 }
