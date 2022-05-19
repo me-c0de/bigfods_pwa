@@ -17,7 +17,6 @@ import {SafeHtmlPipe} from './image-upload/safeHtmlPipe';
 import { CatProfilePictureComponent } from './presentation/cat-profile-picture/cat-profile-picture.component';
 import { EditComponent } from './presentation/edit/edit.component';
 import { LoginComponent } from './login/login.component';
-import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -42,7 +41,6 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

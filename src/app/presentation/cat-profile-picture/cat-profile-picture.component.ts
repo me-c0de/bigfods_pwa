@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Cat} from '../../model/cat';
-import {ImageService} from '../../service/imageservice/image.service';
+import {ImageService} from '../../service/image/image.service';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({

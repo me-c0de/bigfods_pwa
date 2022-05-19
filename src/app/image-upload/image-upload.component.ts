@@ -2,8 +2,8 @@ import {HttpClient, HttpEventType, HttpHeaders} from '@angular/common/http';
 import { Component } from '@angular/core';
 import {Observable} from 'rxjs';
 import {Cat} from '../model/cat';
-import {CatService} from '../service/catservice/cat.service';
-import {ImageService} from '../service/imageservice/image.service';
+import {CatService} from '../service/cat/cat.service';
+import {ImageService} from '../service/image/image.service';
 
 @Component({
   selector: 'app-image-upload',
