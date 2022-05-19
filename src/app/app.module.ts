@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { HeroImageComponent } from './hero-image/hero-image.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { CarouselComponent } from './presentation/carousel/carousel.component';
 import { HttpClientModule} from '@angular/common/http';
@@ -20,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import {HeroImageComponent} from './hero-image/hero-image.component';
 
 
 @NgModule({
