@@ -12,10 +12,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactComponent } from './contact/contact.component';
 import {NgxPageScrollModule} from 'ngx-page-scroll';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {SafeHtmlPipe} from './image-upload/safeHtmlPipe';
 import { CatProfilePictureComponent } from './presentation/cat-profile-picture/cat-profile-picture.component';
 import { EditComponent } from './presentation/edit/edit.component';
+import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -30,14 +32,17 @@ import { EditComponent } from './presentation/edit/edit.component';
     ImageUploadComponent,
     SafeHtmlPipe,
     CatProfilePictureComponent,
-    EditComponent
+    EditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
     NgxPageScrollModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })

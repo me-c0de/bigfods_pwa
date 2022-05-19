@@ -1,0 +1,42 @@
+<div class="container-fluid container-margin" >
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+      <div class="card-box background-white" >
+
+        <form [formGroup]="Login" (ngSubmit)="ProceedLogin()">
+
+          <div class="row">
+            <h2 class="text-center">Login</h2>
+          </div>
+
+          <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="username" placeholder="Nutzername"/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="password"  placeholder="Passwort"/>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg btn-block btn" >Einloggen</button>
+              </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
