@@ -17,6 +17,9 @@ import {SafeHtmlPipe} from './image-upload/safeHtmlPipe';
 import { CatProfilePictureComponent } from './presentation/cat-profile-picture/cat-profile-picture.component';
 import { EditComponent } from './presentation/edit/edit.component';
 import { LoginComponent } from './login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -32,7 +35,8 @@ import { LoginComponent } from './login/login.component';
     SafeHtmlPipe,
     CatProfilePictureComponent,
     EditComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +45,8 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule
   ],
   bootstrap: [AppComponent]
 })
