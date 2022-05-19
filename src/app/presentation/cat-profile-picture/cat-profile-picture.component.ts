@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cat} from '../../cat';
-import {HttpClient} from '@angular/common/http';
+import {Cat} from '../../model/cat';
+import {ImageService} from '../../service/imageservice/image.service';
 import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
 
 @Component({
@@ -13,20 +13,20 @@ export class CatProfilePictureComponent implements OnInit {
   @Input() cat: Cat;
   imageToShow: any;
 
-  constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
+  constructor(private imageService: ImageService,  private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
      this.getImage(this.cat.id);
   }
 
   getImage(id): void {
-    this.http.get('http://127.0.0.1:8080/api/cats/' + id + '/images', { responseType: 'blob' })
-      .subscribe(data => { this.createImageFromBlob(data); });
+    this.imageService.getImage(id)
+      .subscribe(blob => this.imageToShow =  this.createImageFromBlob(blob));
   }
 
-  createImageFromBlob(image: Blob): void {
+  private createImageFromBlob(image: Blob): SafeUrl {
     const urlCreator = window.URL;
-    this.imageToShow = this.sanitizer.bypassSecurityTrustUrl(
+    return this.sanitizer.bypassSecurityTrustUrl(
       urlCreator.createObjectURL(image));
   }
 }

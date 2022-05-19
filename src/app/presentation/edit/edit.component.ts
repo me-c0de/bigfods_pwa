@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cat} from '../../cat';
+import {Cat} from '../../model/cat';
 import {HttpClient} from '@angular/common/http';
-import {CatService} from '../../cat.service';
+import {CatService} from '../../service/catservice/cat.service';
+import {ImageService} from '../../service/imageservice/image.service';
 
 @Component({
   selector: 'app-edit',
@@ -13,11 +14,10 @@ export class EditComponent implements OnInit {
   selectedFile: File;
   @Input() cat: Cat;
 
-  constructor(private http: HttpClient, private catService: CatService) { }
+  constructor(private imageService: ImageService, private catService: CatService) { }
 
   ngOnInit(): void {
   }
-
 
   public onFileChanged(event): void {
     this.selectedFile = event.target.files[0];
@@ -43,7 +43,7 @@ export class EditComponent implements OnInit {
     this.catService.updateCat({ id, name, description} as Cat)
       .subscribe( cat => {
         if (this.selectedFile){
-          this.http.put('http://127.0.0.1:8080/api/images/' + cat.image.id, formdata).subscribe(res => console.log(res));
+          this.imageService.updateImage(cat.image.id, formdata);
         }
       });
   }

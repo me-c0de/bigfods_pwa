@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Cat} from '../cat';
-import {CatService} from '../cat.service';
+import {Cat} from '../model/cat';
+import {CatService} from '../service/catservice/cat.service';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 

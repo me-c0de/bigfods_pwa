@@ -1,8 +1,9 @@
 import {HttpClient, HttpEventType, HttpHeaders} from '@angular/common/http';
 import { Component } from '@angular/core';
 import {Observable} from 'rxjs';
-import {Cat} from '../cat';
-import {CatService} from '../cat.service';
+import {Cat} from '../model/cat';
+import {CatService} from '../service/catservice/cat.service';
+import {ImageService} from '../service/imageservice/image.service';
 
 @Component({
   selector: 'app-image-upload',
@@ -21,7 +22,7 @@ export class ImageUploadComponent{
   };
 
 
-  constructor(private http: HttpClient, private catService: CatService) {
+  constructor(private imageService: ImageService, private catService: CatService) {
   }
 
   public onFileChanged(event): void {
@@ -42,7 +43,6 @@ export class ImageUploadComponent{
     this.clicked = true;
 
     this.catService.addCat({ name, description} as Cat)
-      .subscribe( cat => this.http.post('http://127.0.0.1:8080/api/cats/' + cat.id + '/images', formdata)
-        .subscribe(res => console.log(res)));
+      .subscribe(cat => this.imageService.addImage(cat.id, formdata));
   }
 }
