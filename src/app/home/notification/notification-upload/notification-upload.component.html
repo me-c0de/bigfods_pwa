@@ -1,0 +1,37 @@
+<div class="container-fluid container-margin m-5 p-5" >
+  <div class="row">
+    <div class="offset-lg-3 col-lg-6">
+      <div class="card-box background-white" >
+
+        <form [formGroup]="upload" (ngSubmit)="onUpload()">
+
+          <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="subject" placeholder="Thema"/>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+              <div class="form-group">
+                <input type="text" class="form-control" formControlName="message"  placeholder="Nachricht"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-lg btn-block btn" >Erstellen</button>
+              </div>
+            </div>
+            <div class="col-lg-3">
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="card-box ">
+  <form [formGroup]="edit" (ngSubmit)="onEdit(notification.id)">
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="subject" placeholder="Thema"/>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="offset-lg-3 col-lg-6">
+        <div class="form-group">
+          <input type="text" class="form-control" formControlName="message" placeholder="Nachricht"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-primary btn-lg btn-block btn">Editieren</button>
+    </div>
+
+  </form>
+</div>

@@ -1,10 +1,23 @@
-<div class="mt-5 pt-5" class="container">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row">
+  <div class="offset-lg-5 col-lg-6">
+    <div class="mt-5 pt-5" class="container">
+      <div *ngFor="let notification of notifications" class="card border-5 border-dark p-5 m-5"  style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{notification.subject}}</h5>
+          <p class="card-text">{{notification.message}}</p>
+          <div *ngIf="authService.isLoggedIn()">
+            <button (click)="onEdit()" class="btn btn-primary">Edit</button>
+            <button (click)="onDelete(notification.id)" class="btn btn-danger">Delete</button>
+          </div>
+          <div *ngIf="editing" class="m-5">
+            <app-notification-edit [notification]="notification" ></app-notification-edit>
+          </div>
+        </div>
+        <div *ngIf="notification.date" class="card-footer">{{notification.date}}</div>
+      </div>
     </div>
   </div>
+</div>
+<div *ngIf="authService.isLoggedIn()">
+  <app-notification-input></app-notification-input>
 </div>

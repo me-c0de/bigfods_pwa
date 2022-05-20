@@ -25,10 +25,10 @@ export class NotificationService {
   }
 
   public updateNotification(notificationId: number, notification: Notification): Observable<Notification> {
-    return this.http.post<Notification>(path.NOTIFICATION_ENDPOINT + notificationId , notification);
+    return this.http.put<Notification>(path.NOTIFICATION_ENDPOINT + notificationId , notification);
   }
 
-  public deleteNotificat(notificationId: number): Observable<boolean> {
+  public deleteNotification(notificationId: number): Observable<boolean> {
     return this.http.delete<boolean>(path.NOTIFICATION_ENDPOINT + notificationId);
   }
 

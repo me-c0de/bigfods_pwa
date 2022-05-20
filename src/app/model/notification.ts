@@ -1,7 +1,7 @@
 export interface Notification {
-  id: number;
-  subject: string;
-  message: string;
-  // date: Date;
+  id?: number;
+  subject?: string;
+  message?: string;
+  date?: Date;
 
 }

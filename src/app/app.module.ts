@@ -23,6 +23,8 @@ import {HeroImageComponent} from './home/hero-image/hero-image.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {AdaptComponent} from './home/presentation/adapt/adapt.component';
 import { NotificationComponent } from './home/notification/notification.component';
+import { NotificationUploadComponent } from './home/notification/notification-upload/notification-upload.component';
+import { NotificationEditComponent } from './home/notification/notification-edit/notification-edit.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { NotificationComponent } from './home/notification/notification.componen
     HomeComponent,
     RegistrationComponent,
     AdaptComponent,
-    NotificationComponent
+    NotificationComponent,
+    NotificationUploadComponent,
+    NotificationEditComponent
   ],
   imports: [
     BrowserModule,
