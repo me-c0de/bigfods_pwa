@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Cat} from '../model/cat';
-import {CatService} from '../service/cat/cat.service';
-import {HttpClient} from '@angular/common/http';
-import {AuthService} from "../service/auth/auth.service";
+import {Cat} from '../../model/cat';
+import {CatService} from '../../service/cat/cat.service';
+import {AuthService} from '../../service/auth/auth.service';
 
 @Component({
   selector: 'app-presentation',

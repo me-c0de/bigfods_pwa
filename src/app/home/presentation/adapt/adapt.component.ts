@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cat} from '../../model/cat';
-import {CatService} from '../../service/cat/cat.service';
+import {Cat} from '../../../model/cat';
+import {CatService} from '../../../service/cat/cat.service';
 
 @Component({
   selector: 'app-adapt',

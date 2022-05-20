@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Cat} from '../../model/cat';
+import {Cat} from '../../../model/cat';
 import {HttpClient} from '@angular/common/http';
-import {CatService} from '../../service/cat/cat.service';
-import {ImageService} from '../../service/image/image.service';
+import {CatService} from '../../../service/cat/cat.service';
+import {ImageService} from '../../../service/image/image.service';
 
 @Component({
   selector: 'app-edit',
