@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import {HeroImageComponent} from './hero-image/hero-image.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {HeroImageComponent} from './hero-image/hero-image.component';
     CatProfilePictureComponent,
     EditComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

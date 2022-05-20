@@ -15,7 +15,7 @@ export class PresentationComponent implements OnInit{
   showEdit = false;
   imageToShow: any;
 
-  constructor(private http: HttpClient, private catService: CatService) {
+  constructor(private catService: CatService) {
   }
 
   public ngOnInit(): void {
