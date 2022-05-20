@@ -15,12 +15,16 @@ export class AuthService {
     return this.http.post(this.apiurl + 'registration', User);
   }
 
-  proceedLogin(UserCred: any): Observable<any>{
-    return this.http.post(this.apiurl + 'login', UserCred);
+  proceedLogin(UserCred: any): Observable<string>{
+     return this.http.post(this.apiurl + 'login', UserCred, {responseType: 'text'});
   }
 
   isLoggedIn(): boolean {
-    return localStorage.getItem('token') != null;
+      return localStorage.getItem('token') != null;
+  }
+
+  logout(): void{
+    localStorage.clear();
   }
 
   getToken(): string{

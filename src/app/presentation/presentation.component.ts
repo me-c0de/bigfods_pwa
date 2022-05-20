@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Cat} from '../model/cat';
 import {CatService} from '../service/cat/cat.service';
 import {HttpClient} from '@angular/common/http';
+import {AuthService} from "../service/auth/auth.service";
 
 @Component({
   selector: 'app-presentation',
@@ -15,7 +16,7 @@ export class PresentationComponent implements OnInit{
   showEdit = false;
   imageToShow: any;
 
-  constructor(private catService: CatService) {
+  constructor(private catService: CatService, public authService: AuthService) {
   }
 
   public ngOnInit(): void {

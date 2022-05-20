@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../service/auth/auth.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   responsedata: any;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private route: Router) {
     localStorage.clear();
   }
 
@@ -28,7 +29,8 @@ export class LoginComponent implements OnInit {
       this.authService.proceedLogin(this.login.value).subscribe(response => {
         if (response != null){
           this.responsedata = response;
-          localStorage.setItem('token', this.responsedata.jwtToken);
+          localStorage.setItem('token', this.responsedata);
+          this.route.navigate(['']);
         }
       });
     }

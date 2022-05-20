@@ -1,4 +1,3 @@
-
 <div class="container ">
   <div *ngFor="let cat of cats" class="row py-5 my-5">
     <div class="col-lg-3">
@@ -9,13 +8,15 @@
         <h3>{{ cat.name }}</h3>
         <p>{{ cat.description }}</p>
       </div>
-     <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
+      <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
     </div>
-    <button (click)="onDelete(cat.id)" >Delete</button>
-    <button (click)="onEdit(cat)">Edit</button>
-    <app-edit *ngIf="showEdit" [cat]=cat ></app-edit>
+    <div *ngIf="authService.isLoggedIn()">
+      <button (click)="onDelete(cat.id)">Delete</button>
+      <button (click)="onEdit(cat)">Edit</button>
+      <app-edit *ngIf="showEdit" [cat]=cat></app-edit>
+    </div>
   </div>
-  <div>
+  <div *ngIf="authService.isLoggedIn()" >
     <app-image-upload></app-image-upload>
   </div>
 </div>
