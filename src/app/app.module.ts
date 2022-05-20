@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
 import {HeroImageComponent} from './home/hero-image/hero-image.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {AdaptComponent} from './home/presentation/adapt/adapt.component';
+import { NotificationComponent } from './home/notification/notification.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import {AdaptComponent} from './home/presentation/adapt/adapt.component';
     LoginComponent,
     HomeComponent,
     RegistrationComponent,
-    AdaptComponent
+    AdaptComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
