@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor, HttpErrorResponse
 } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {AuthService} from '../../service/auth/auth.service';
@@ -13,12 +13,12 @@ export class TokenInterceptor implements HttpInterceptor {
 
   constructor(private inject: Injector) {}
 
-  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    const authservice = this.inject.get(AuthService);
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    const authService = this.inject.get(AuthService);
 
     const jwtToken = request.clone({
       setHeaders: {
-        Authorization: 'bearer ' + authservice.getToken()
+        Authorization: 'bearer ' + authService.getToken()
       }
     });
 
