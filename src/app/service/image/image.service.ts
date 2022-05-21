@@ -1,29 +1,29 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {DomSanitizer, SafeUrl} from '@angular/platform-browser';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Image} from '../../model/image';
 import {Observable} from 'rxjs';
+import {path} from '../constants/path';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
 
-  catsUrl = 'http://127.0.0.1:8080/api';
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data; boundary=something' })
+  };
 
   constructor(private http: HttpClient) { }
 
-  updateImage(id: number, formdata: FormData): SafeUrl{
-    return this.http.put<Image>(this.catsUrl + '/images/' + id, formdata)
-      .subscribe(blob => console.log(blob));
+  updateImage(id: number, formData: FormData): Observable<Image>{
+    return this.http.put<Image>(path.IMAGE_ENDPOINT + id, formData);
   }
 
-  addImage(id: number, formdata: FormData): SafeUrl {
-    return this.http.post<Image>(this.catsUrl + '/cats/' + id + '/images', formdata)
-      .subscribe(blob => console.log(blob));
+  addImage(formData: FormData): Observable<Image> {
+    return this.http.post<Image>(path.IMAGE_ENDPOINT, formData);
   }
 
   getImage(id: number): Observable<Blob>{
-    return this.http.get(this.catsUrl + '/cats/' + id + '/images', {responseType: 'blob'});
+    return this.http.get(path.IMAGE_ENDPOINT + id, {responseType: 'blob'});
   }
 }

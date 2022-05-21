@@ -43,7 +43,9 @@ export class EditComponent implements OnInit {
     this.catService.updateCat({ id, name, description} as Cat)
       .subscribe( cat => {
         if (this.selectedFile){
-          this.imageService.updateImage(cat.image.id, formdata);
+          this.imageService.updateImage(cat.image.id, formdata).subscribe(
+            res => console.log(res)
+          );
         }
       });
   }

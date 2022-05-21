@@ -25,9 +25,11 @@ export class NotificationEditComponent implements OnInit {
 
   public onEdit(notificationId: number): void{
 
+    const formData = this.edit.value;
+
     const notification: Notification = {
-      subject: this.edit.value.subject,
-      message: this.edit.value.message
+      subject: formData.subject,
+      message: formData.message
     };
 
     this.notificationService.updateNotification(notificationId, notification).subscribe(res =>

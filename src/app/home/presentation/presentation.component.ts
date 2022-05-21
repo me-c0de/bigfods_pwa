@@ -13,7 +13,6 @@ export class PresentationComponent implements OnInit{
 
   cats: Cat[] = [];
   showEdit = false;
-  imageToShow: any;
 
   constructor(private catService: CatService, public authService: AuthService) {
   }
@@ -26,11 +25,11 @@ export class PresentationComponent implements OnInit{
     this.catService.getCats().subscribe(cats => this.cats = cats);
   }
 
-  public onDelete(id): void {
-    this.catService.deleteCat(id).subscribe(res => console.log(res));
+  public onDelete(cat: Cat): void {
+    this.catService.deleteCat(cat.id).subscribe(res => console.log(res));
   }
 
-  public onEdit(cat: Cat): void{
+  public onEdit(): void{
     this.showEdit = true;
   }
 }

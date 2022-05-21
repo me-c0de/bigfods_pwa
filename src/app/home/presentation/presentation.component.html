@@ -11,8 +11,8 @@
       <!-- <app-carousel [catImage]=cat.kittenImages></app-carousel>-->
     </div>
     <div *ngIf="authService.isLoggedIn()">
-      <button (click)="onDelete(cat.id)">Delete</button>
-      <button (click)="onEdit(cat)">Edit</button>
+      <button (click)="onDelete(cat)">Delete</button>
+      <button (click)="onEdit()">Edit</button>
       <app-edit *ngIf="showEdit" [cat]=cat></app-edit>
     </div>
   </div>

@@ -1,0 +1,22 @@
+<div [formGroup]="upload">
+  <div class="m-auto p-2">
+    <input class="p-2" formControlName="catName" placeholder="Name"/>
+    <input class="p-2" formControlName="catDescription" placeholder="Beschreibung"/>
+  </div>
+  <div  class="m-auto p-2">
+    <input class="p-2" type="file" (change)="onFileChanged($event)">
+    <button class="p-2" (click)="onUpload()">Hochladen!</button>
+  </div>
+  <div class="form-group">
+    <label for="file">Kitten-Bilder</label>
+    <input
+      formControlName="file"
+      id="file"
+      type="file"
+      class="form-control"
+      multiple=""
+      (change)="onFileChanged($event)">
+  </div>
+</div>
+
+

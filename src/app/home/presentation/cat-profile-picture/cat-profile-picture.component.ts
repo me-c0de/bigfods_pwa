@@ -16,7 +16,7 @@ export class CatProfilePictureComponent implements OnInit {
   constructor(private imageService: ImageService,  private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-     this.getImage(this.cat.id);
+     this.getImage(this.cat.image.id);
   }
 
   getImage(id): void {

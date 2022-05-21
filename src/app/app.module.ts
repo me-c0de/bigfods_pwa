@@ -10,9 +10,9 @@ import { CatResidenceGalleryComponent } from './home/cat-residence-gallery/cat-r
 import { AboutUsComponent } from './home/about-us/about-us.component';
 import { ContactComponent } from './home/contact/contact.component';
 import {NgxPageScrollModule} from 'ngx-page-scroll';
-import { ImageUploadComponent } from './home/image-upload/image-upload.component';
+import { ImageUploadComponent } from './home/presentation/image-upload/image-upload.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {SafeHtmlPipe} from './home/image-upload/safeHtmlPipe';
+import {SafeHtmlPipe} from './home/presentation/image-upload/safeHtmlPipe';
 import { CatProfilePictureComponent } from './home/presentation/cat-profile-picture/cat-profile-picture.component';
 import { EditComponent } from './home/presentation/edit/edit.component';
 import { LoginComponent } from './login/login.component';
